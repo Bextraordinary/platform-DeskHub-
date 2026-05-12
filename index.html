@@ -1,1 +1,961 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeskHub - مركز الأنظمة البديلة والأدوات المفتوحة</title>
+  <meta name="description" content="تحميل أنظمة لينكس، كروم OS، أندرويد للكمبيوتر مجاناً. Ubuntu, Mint, Zorin, ChromeOS Flex بروابط مباشرة وشرح التثبيت بالعربي">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #051b11;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a2e1d; }
+    ::-webkit-scrollbar-thumb { background: #16a34a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #22c55e; }
+    html { scroll-behavior: smooth; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); }
+  </style>
+</head>
+<body class="text-white">
+  <div class="min-h-screen flex">
+    
+    <aside class="w-64 bg-black/30 backdrop-blur-2xl border-l border-white/10 p-4 hidden lg:flex lg:flex-col fixed h-full">
+      <div class="flex items-center gap-2 mb-10 px-2">
+        <div class="w-8 h-8 bg-gradient-to-br from-green-600 to-emerald-700 rounded-lg flex items-center justify-center">
+          <i data-lucide="zap" class="w-5 h-5"></i>
+        </div>
+        <h1 class="text-xl font-bold">DeskzHub</h1>
+      </div>
+     <nav class="space-y-1 flex-1 text-sm">
+  <a href="linux/ubuntu.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="feather" class="w-5 h-5"></i>
+    <span class="font-medium">ubuntu</span>
+  </a>
+ 
+  <a href="linux-beginners.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-green-500/20 text-green-400">
+    <i data-lucide="terminal" class="w-5 h-5"></i>
+    <span class="font-medium">لينكس للمبتدئين</span>
+  </a>
+  
+  <a href="linux-lite.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="zap" class="w-5 h-5"></i>
+    <span class="font-medium">توزيعات خفيفة</span>
+  </a>
+  
+  <a href="linux-gaming.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+    <span class="font-medium">لينكس للقيمرز</span>
+  </a>
+  
+  <a href="other-os.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="box" class="w-5 h-5"></i>
+    <span class="font-medium">أنظمة أخرى</span>
+  </a>
+  
+  <a href="burn.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="disc" class="w-5 h-5"></i>
+    <span class="font-medium">حرق ISO</span>
+  </a>
+   
+  <a href="drivers.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="hard-drive" class="w-5 h-5"></i>
+    <span class="font-medium">التعريفات</span>
+  </a>
+  
+  <a href="essential.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="package" class="w-5 h-5"></i>
+    <span class="font-medium">برامج أساسية</span>
+  </a>
+ 
+  <a href="browsers.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="globe" class="w-5 h-5"></i>
+    <span class="font-medium">متصفحات</span>
+  </a>
+  
+  <a href="tools.html" class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-white/5 hover:text-white transition-all">
+    <i data-lucide="wrench" class="w-5 h-5"></i>
+    <span class="font-medium">أدوات صيانة</span>
+  </a>
+</nav>
+     
+<div class="mt-6 pt-6 border-t border-white/10">
+  <h3 class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">نوع النظام</h3>
+  <div class="space-y-2 text-sm">
+    <label class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+      <input type="checkbox" class="version-filter w-4 h-4 rounded bg-white/10 border-white/20 text-green-600 focus:ring-green-500" checked>
+      <span>Ubuntu</span>
+    </label>
+    <label class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+      <input type="checkbox" class="version-filter w-4 h-4 rounded bg-white/10 border-white/20 text-green-600 focus:ring-green-500" checked>
+      <span>Mint</span>
+    </label>
+    <label class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+      <input type="checkbox" class="version-filter w-4 h-4 rounded bg-white/10 border-white/20 text-green-600 focus:ring-green-500">
+      <span>Zorin</span>
+    </label>
+    <label class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+      <input type="checkbox" class="version-filter w-4 h-4 rounded bg-white/10 border-white/20 text-green-600 focus:ring-green-500">
+      <span>ChromeOS</span>
+    </label>
+  </div>
+</div>
+</aside>
+
+<!-- المحتوى الرئيسي -->
+<div class="flex-1 flex flex-col lg:mr-64">
+      
+  <header class="flex items-center justify-between p-6 lg:p-8 border-b border-white/10 bg-black/20 backdrop-blur-xl sticky top-0 z-10">
+    <div class="flex items-center gap-3">
+      <button onclick="toggleSidebar()" class="p-2 text-white lg:hidden">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+      
+      <div class="flex-1 max-w-md">
+        <div class="relative">
+          <input type="text" id="search" placeholder="ابحث..." class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 pr-10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <i data-lucide="search" class="w-5 h-5 text-gray-500 absolute right-3 top-2.5"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+    
+      
+      <main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+        <div class="relative bg-gradient-to-l from-green-900/50 to-emerald-900/30 border-green-500/20 rounded-2xl p-8 mb-8 overflow-hidden">
+          <div class="absolute top-0 left-0 w-64 h-64 bg-green-600/30 rounded-full blur-3xl -z-10"></div>
+          <h1 class="text-3xl lg:text-4xl font-extrabold mb-2">DeskzHub - مركز الأنظمة البديلة</h1>
+          <p class="text-gray-300">كل توزيعات لينكس + كروم OS + أندرويد للكمبيوتر + الأدوات المفتوحة في مكان واحد</p>
+        </div>
+
+        <!-- 1. لينكس للمبتدئين -->
+        <section id="linux-beginner" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="smile" class="w-6 h-6 text-green-500"></i> لينكس للمبتدئين</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-orange-500 to-red-600"><i data-lucide="terminal" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">ISO رسمي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Ubuntu 24.04 LTS</h3>
+                <p class="text-gray-400 text-sm mb-4">الأشهر عالمياً - دعم 5 سنوات</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">5.8 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">64bit</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">عربي</span>
+                </div>
+                <button onclick="showDetails('ubuntu')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-500 to-emerald-700"><i data-lucide="leaf" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">ISO رسمي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Linux Mint 22</h3>
+                <p class="text-gray-400 text-sm mb-4">شبه ويندوز 7 - خفيف وسريع</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">2.8 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Cinnamon</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">عربي</span>
+                </div>
+                <button onclick="showDetails('mint')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-500 to-cyan-600"><i data-lucide="monitor" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">ISO رسمي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Zorin OS 17</h3>
+                <p class="text-gray-400 text-sm mb-4">مصمم للناس المحولة من ويندوز</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">3.2 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Core</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">مجاني</span>
+                </div>
+                <button onclick="showDetails('zorin')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. لينكس للأجهزة الضعيفة -->
+        <section id="linux-lite" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="zap" class="w-6 h-6 text-yellow-500"></i> لينكس للأجهزة الضعيفة</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-400 to-blue-600"><i data-lucide="feather" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">خفيف</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Lubuntu 24.04</h3>
+                <p class="text-gray-400 text-sm mb-4">يشتغل على رام 1 قيقا فقط</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">2.1 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">LXQt</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">سريع</span>
+                </div>
+                <button onclick="showDetails('lubuntu')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-purple-500 to-pink-600"><i data-lucide="dog" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">خفيف جداً</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Puppy Linux</h3>
+                <p class="text-gray-400 text-sm mb-4">بيشتغل من الرام 300MB بس</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">400 MB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">JWM</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">محمول</span>
+                </div>
+                <button onclick="showDetails('puppy')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. لينكس للقيمرز -->
+        <section id="linux-gaming" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="gamepad-2" class="w-6 h-6 text-purple-500"></i> لينكس للقيمرز</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-yellow-500 to-orange-600"><i data-lucide="cpu" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">قيمنق</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Pop!_OS 22.04</h3>
+                <p class="text-gray-400 text-sm mb-4">تعريفات NVIDIA جاهزة للألعاب</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">3.5 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">NVIDIA</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Steam</span>
+                </div>
+                <button onclick="showDetails('popos')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-cyan-500 to-blue-600"><i data-lucide="rocket" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">قيمنق</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Garuda Linux</h3>
+                <p class="text-gray-400 text-sm mb-4">أداء عالي + واجهة جميلة</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">4.2 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Dragonized</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Arch</span>
+                </div>
+                <button onclick="showDetails('garuda')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-indigo-500 to-purple-600"><i data-lucide="sword" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">قيمنق</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Nobara Linux</h3>
+                <p class="text-gray-400 text-sm mb-4">Fedora معدلة للقيمرز</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">3.8 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Proton</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Wine</span>
+                </div>
+                <button onclick="showDetails('nobara')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. أنظمة أخرى -->
+        <section id="other-os" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="box" class="w-6 h-6 text-blue-500"></i> أنظمة أخرى</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-purple-500 to-pink-600"><i data-lucide="chrome" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">ISO رسمي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">ChromeOS Flex</h3>
+                <p class="text-gray-400 text-sm mb-4">بحول لابتوبك القديم لكروم بوك</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">2.1 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">سحابي</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">سريع جداً</span>
+                </div>
+                <button onclick="showDetails('chromeos')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-600 to-green-800"><i data-lucide="smartphone" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">أندرويد</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Android-x86 9.0</h3>
+                <p class="text-gray-400 text-sm mb-4">شغل تطبيقات أندرويد على PC</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">1.1 GB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">Play Store</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">x86</span>
+                </div>
+                <button onclick="showDetails('android')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+
+            <div class="relative group os-card card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-gray-500 to-gray-700"><i data-lucide="hard-drive" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">نظام تشغيل</p><p class="text-white font-semibold">كلاسيكي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">FreeDOS 1.3</h3>
+                <p class="text-gray-400 text-sm mb-4">نظام DOS مجاني للأجهزة القديمة</p>
+                <div class="flex gap-2 text-xs mb-4">
+                  <span class="bg-white/10 px-2 py-1 rounded">500 MB</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">DOS</span>
+                  <span class="bg-white/10 px-2 py-1 rounded">خفيف</span>
+                </div>
+                <button onclick="showDetails('freedos')" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل ISO</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. برامج حرق الأنظمة -->
+        <section id="burn" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="disc" class="w-6 h-6 text-red-500"></i> برامج حرق الأنظمة على USB</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-500 to-emerald-600"><i data-lucide="usb" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أداة</p><p class="text-white font-semibold">مفتوحة المصدر</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">BalenaEtcher</h3>
+                <p class="text-gray-400 text-sm mb-4">أسهل أداة حرق ISO - 3 نقرات</p>
+                <a href="https://etcher.balena.io/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-500 to-blue-700"><i data-lucide="disc" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أداة</p><p class="text-white font-semibold">Ventoy</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Ventoy</h3>
+                <p class="text-gray-400 text-sm mb-4">حرق عدة أنظمة على فلاشة واحدة</p>
+                <a href="https://www.ventoy.net/en/download.html" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 6. التعريفات -->
+                    <!-- 6. التعريفات -->
+        <section id="drivers" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="hard-drive" class="w-6 h-6 text-orange-500"></i> تعريفات ضرورية</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-orange-500 to-red-600"><i data-lucide="download" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أداة</p><p class="text-white font-semibold">تلقائي</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Driver Booster</h3>
+                <p class="text-gray-400 text-sm mb-4">تحديث كل التعريفات تلقائي بنقرة</p>
+                <a href="https://www.iobit.com/en/driver-booster.php" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-500 to-cyan-600"><i data-lucide="wifi-off" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أداة</p><p class="text-white font-semibold">أوفلاين</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Snappy Driver</h3>
+                <p class="text-gray-400 text-sm mb-4">مجاني ويشتغل بدون نت نهائي</p>
+                <a href="https://sdi-tool.org/download/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-500 to-teal-600"><i data-lucide="network" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أداة</p><p class="text-white font-semibold">شبكة</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">3DP Net</h3>
+                <p class="text-gray-400 text-sm mb-4">تعريف كرت الشبكة لو النت قاطع</p>
+                <a href="https://www.3dpchip.com/3dpchip/3dp/net_down.php" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. برامج أساسية -->
+        <section id="essential" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="package" class="w-6 h-6 text-cyan-500"></i> برامج أساسية</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-orange-500 to-red-600"><i data-lucide="video" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">مشغل</p><p class="text-white font-semibold">فيديو</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">VLC Media Player</h3>
+                <p class="text-gray-400 text-sm mb-4">بيشغل أي فيديو بدون كودكس</p>
+                <a href="https://www.videolan.org/vlc/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-500 to-indigo-600"><i data-lucide="file-archive" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">ضغط</p><p class="text-white font-semibold">ملفات</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">7-Zip</h3>
+                <p class="text-gray-400 text-sm mb-4">فك الضغط مجاناً - أخف من WinRAR</p>
+                <a href="https://www.7-zip.org/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-500 to-emerald-600"><i data-lucide="file-text" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">أوفيس</p><p class="text-white font-semibold">مجاني</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">LibreOffice</h3>
+                <p class="text-gray-400 text-sm mb-4">بديل مايكروسوفت أوفيس مفتوح المصدر</p>
+                <a href="https://www.libreoffice.org/download/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. متصفحات -->
+        <section id="browsers" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="globe" class="w-6 h-6 text-indigo-500"></i> متصفحات</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-yellow-500 to-red-600"><i data-lucide="chrome" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">متصفح</p><p class="text-white font-semibold">سريع</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Google Chrome</h3>
+                <p class="text-gray-400 text-sm mb-4">الأشهر والأسرع مع مزامنة</p>
+                <a href="https://www.google.com/chrome/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-orange-500 to-red-600"><i data-lucide="flame" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">متصفح</p><p class="text-white font-semibold">خصوصية</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Firefox</h3>
+                <p class="text-gray-400 text-sm mb-4">خصوصية عالية ومفتوح المصدر</p>
+                <a href="https://www.mozilla.org/firefox/new/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-orange-500 to-red-600"><i data-lucide="shield" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">متصفح</p><p class="text-white font-semibold">آمن</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Brave</h3>
+                <p class="text-gray-400 text-sm mb-4">بيحظر الإعلانات تلقائي</p>
+                <a href="https://brave.com/download/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. أدوات صيانة -->
+        <section id="tools" class="mb-16">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2"><i data-lucide="wrench" class="w-6 h-6 text-pink-500"></i> أدوات صيانة</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-blue-500 to-cyan-600"><i data-lucide="trash-2" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">تنظيف</p><p class="text-white font-semibold">سريع</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">CCleaner</h3>
+                <p class="text-gray-400 text-sm mb-4">تنظيف الملفات المؤقتة والريجستري</p>
+                <a href="https://www.ccleaner.com/ccleaner/download" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-purple-500 to-pink-600"><i data-lucide="disc" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">إسطوانة</p><p class="text-white font-semibold">إنقاذ</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">Hiren’s BootCD</h3>
+                <p class="text-gray-400 text-sm mb-4">إسطوانة صيانة شاملة للطوارئ</p>
+                <a href="https://www.hirensbootcd.org/download/" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+
+            <div class="relative group card-hover">
+              <div class="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
+              <div class="relative bg-[#0a2e1d]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-5 h-full flex flex-col">
+                <div class="flex justify-between items-start mb-3">
+                  <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br from-green-500 to-teal-600"><i data-lucide="hard-drive" class="w-7 h-7"></i></div>
+                  <div class="text-left"><p class="text-gray-400 text-xs">تقسيم</p><p class="text-white font-semibold">هارد</p></div>
+                </div>
+                <h3 class="text-white font-bold text-lg">GParted Live</h3>
+                <p class="text-gray-400 text-sm mb-4">تقسيم الهارد وإدارة البارتشنات</p>
+                <a href="https://gparted.org/download.php" target="_blank" class="mt-auto w-full py-2.5 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">تحميل</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- نافذة تفاصيل النظام -->
+        <div id="detailsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+          <div class="bg-[#0a2e1d] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                  <div id="modalIcon" class="w-12 h-12 rounded-xl flex items-center justify-center text-white"></div>
+                  <div>
+                    <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+                    <p id="modalSubtitle" class="text-gray-400 text-sm"></p>
+                  </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                  <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+              </div>
+
+              <div id="modalContent" class="space-y-4 text-gray-300 mb-6"></div>
+
+              <div class="flex gap-3">
+                <a id="modalDownloadLink" href="#" target="_blank" class="flex-1 py-3 rounded-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white text-center">
+                  تحميل من الموقع الرسمي
+                </a>
+                <button onclick="closeModal()" class="px-6 py-3 rounded-lg font-semibold bg-white/10 hover:bg-white/20 text-white">
+                  إلغاء
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const osData = {
+      ubuntu: {
+        title: 'Ubuntu 24.04 LTS',
+        subtitle: 'الأشهر عالمياً - دعم 5 سنوات',
+        icon: 'terminal',
+        color: 'from-orange-500 to-red-600',
+        link: 'https://ubuntu.com/download/desktop',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>دعم طويل 5 سنوات</li>
+            <li>مستودعات ضخمة</li>
+            <li>مجتمع كبير</li>
+            <li>واجهة GNOME حديثة</li>
+          </ul>
+          <h4 class="font-bold text-white mt-4 mb-2">متطلبات التشغيل:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>رام: 4GB على الأقل</li>
+            <li>مساحة: 25GB</li>
+            <li>معالج: 2GHz ثنائي النواة</li>
+          </ul>
+          <p class="text-xs text-yellow-400 mt-4">⚠️ التحميل حيكون من الموقع الرسمي لـ Ubuntu</p>
+        `
+      },
+      mint: {
+        title: 'Linux Mint 22',
+        subtitle: 'شبه ويندوز 7 - خفيف وسريع',
+        icon: 'leaf',
+        color: 'from-green-500 to-emerald-700',
+        link: 'https://linuxmint.com/download.php',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>واجهة Cinnamon مألوفة</li>
+            <li>خفيف على الجهاز</li>
+            <li>كودكس مدمجة</li>
+            <li>مستقر جداً</li>
+          </ul>
+          <h4 class="font-bold text-white mt-4 mb-2">متطلبات التشغيل:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>رام: 2GB</li>
+            <li>مساحة: 20GB</li>
+            <li>معالج: 1GHz</li>
+          </ul>
+        `
+      },
+      zorin: {
+        title: 'Zorin OS 17',
+        subtitle: 'مصمم للناس المحولة من ويندوز',
+        icon: 'monitor',
+        color: 'from-blue-500 to-cyan-600',
+        link: 'https://zorin.com/os/download',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>شكل ويندوز 11</li>
+            <li>تشغيل برامج ويندوز</li>
+            <li>سريع وآمن</li>
+            <li>نسخة Core مجانية</li>
+          </ul>
+        `
+      },
+      lubuntu: {
+        title: 'Lubuntu 24.04',
+        subtitle: 'يشتغل على رام 1 قيقا فقط',
+        icon: 'feather',
+        color: 'from-blue-400 to-blue-600',
+        link: 'https://lubuntu.me/downloads/',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>واجهة LXQt خفيفة</li>
+            <li>للأجهزة القديمة</li>
+            <li>سريع الإقلاع</li>
+          </ul>
+        `
+      },
+      puppy: {
+        title: 'Puppy Linux',
+        subtitle: 'بيشتغل من الرام 300MB بس',
+        icon: 'dog',
+        color: 'from-purple-500 to-pink-600',
+        link: 'https://puppylinux.com',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>حجم 400MB فقط</li>
+            <li>يشتغل من USB</li>
+            <li>سريع جداً</li>
+            <li>مثالي للأجهزة القديمة</li>
+          </ul>
+        `
+      },
+      popos: {
+        title: 'Pop!_OS 22.04',
+        subtitle: 'تعريفات NVIDIA جاهزة للألعاب',
+        icon: 'cpu',
+        color: 'from-yellow-500 to-orange-600',
+        link: 'https://pop.system76.com',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>تعريفات NVIDIA مدمجة</li>
+            <li>Steam جاهز</li>
+            <li>أداء قيمنق عالي</li>
+            <li>واجهة COSMIC</li>
+          </ul>
+        `
+      },
+      garuda: {
+        title: 'Garuda Linux',
+        subtitle: 'أداء عالي + واجهة جميلة',
+        icon: 'rocket',
+        color: 'from-cyan-500 to-blue-600',
+        link: 'https://garudalinux.org/downloads.html',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>مبني على Arch</li>
+            <li>واجهة Dragonized</li>
+            <li>أدوات قيمنق</li>
+            <li>تحديثات مستمرة</li>
+          </ul>
+        `
+      },
+      nobara: {
+        title: 'Nobara Linux',
+        subtitle: 'Fedora معدلة للقيمرز',
+        icon: 'sword',
+        color: 'from-indigo-500 to-purple-600',
+        link: 'https://nobaraproject.org',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>Proton + Wine جاهز</li>
+            <li>كودكس مدمجة</li>
+            <li>محسن للألعاب</li>
+            <li>سهل الاستخدام</li>
+          </ul>
+        `
+      },
+      chromeos: {
+        title: 'ChromeOS Flex',
+        subtitle: 'بحول لابتوبك القديم لكروم بوك',
+        icon: 'chrome',
+        color: 'from-purple-500 to-pink-600',
+        link: 'https://chromeenterprise.google/os/chromeosflex/',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>سحابي سريع</li>
+            <li>آمن جداً</li>
+            <li>تحديثات تلقائية</li>
+            <li>مثالي للتصفح</li>
+          </ul>
+        `
+      },
+      android: {
+        title: 'Android-x86 9.0',
+        subtitle: 'شغل تطبيقات أندرويد على PC',
+        icon: 'smartphone',
+        color: 'from-green-600 to-green-800',
+        link: 'https://www.android-x86.org/download.html',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>Play Store كامل</li>
+            <li>تشغيل ألعاب الموبايل</li>
+            <li>واجهة تابلت</li>
+            <li>مجاني 100%</li>
+          </ul>
+        `
+      },
+      freedos: {
+        title: 'FreeDOS 1.3',
+        subtitle: 'نظام DOS مجاني للأجهزة القديمة',
+        icon: 'hard-drive',
+        color: 'from-gray-500 to-gray-700',
+        link: 'https://www.freedos.org/download/',
+        desc: `
+          <h4 class="font-bold text-white mb-2">المميزات:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>متوافق مع MS-DOS</li>
+            <li>خفيف جداً</li>
+            <li>يشغل البرامج القديمة</li>
+            <li>مجاني 100%</li>
+          </ul>
+          <h4 class="font-bold text-white mt-4 mb-2">متطلبات التشغيل:</h4>
+          <ul class="list-disc pr-5 space-y-1 text-sm">
+            <li>رام: 64MB فقط</li>
+            <li>مساحة: 500MB</li>
+            <li>معالج: 386 أو أحدث</li>
+          </ul>
+        `
+      }
+    };
+
+    function showDetails(osName) {
+      const os = osData[osName];
+      if (!os) return;
+      document.getElementById('modalTitle').textContent = os.title;
+      document.getElementById('modalSubtitle').textContent = os.subtitle;
+      document.getElementById('modalContent').innerHTML = os.desc;
+      document.getElementById('modalDownloadLink').href = os.link;
+      const iconDiv = document.getElementById('modalIcon');
+      iconDiv.className = `w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br ${os.color}`;
+      iconDiv.innerHTML = `<i data-lucide="${os.icon}" class="w-7 h-7"></i>`;
+      document.getElementById('detailsModal').classList.remove('hidden');
+      document.getElementById('detailsModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('detailsModal').classList.add('hidden');
+      document.getElementById('detailsModal').classList.remove('flex');
+    }
+
+    document.getElementById('detailsModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search');
+      const cards = document.querySelectorAll('.os-card,.group');
+      const checkboxes = document.querySelectorAll('.version-filter');
+
+      function filterCards() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeVersions = Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.nextElementSibling.textContent.trim().toLowerCase());
+
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const desc = card.querySelector('p').textContent.toLowerCase();
+          const matchesSearch = title.includes(searchTerm) || desc.includes(searchTerm);
+          const matchesVersion = activeVersions.length === 0 || activeVersions.some(v => title.includes(v));
+
+          if (matchesSearch && matchesVersion) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', filterCards);
+      checkboxes.forEach(cb => cb.addEventListener('change', filterCards));
+    });
+  </script>
+    <!-- القائمة الجانبية للموبايل - مصححة -->
+<div id="mobileSidebar" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden lg:hidden" onclick="toggleSidebar()">
+  <div id="sidebarContent" onclick="event.stopPropagation()" class="absolute right-0 top-0 h-full w-72 bg-[#0a2418] border-l border-green-500/20 transform translate-x-full transition-transform duration-300 ease-in-out">
+    <!-- الهيدر حق القائمة -->
+    <div class="flex items-center justify-between p-6 border-b border-green-500/20">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" class="w-12 h-15 rounded-lg" alt="Logo">
+        <h2 class="text-xl font-bold text-white">DeskHub</h2>
+      </div>
+      <button onclick="toggleSidebar()" class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+        <svg class="w-7 h-7 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- عناصر القائمة -->
+    <nav class="p-4 space-y-1 overflow-y-auto h-[calc(100%-80px)]">
+      <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="feather" class="w-5 h-5"></i>
+        <span>الرئيسية</span>
+      </a>
+
+      <a href="linux-beginners.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="terminal" class="w-5 h-5"></i>
+        <span>لينكس للمبتدئين</span>
+      </a>
+        
+         <a href="linux-gaming.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+        <span>لينكس للقيمرز</span>
+      </a>
+
+      <a href="other-os.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="box" class="w-5 h-5"></i>
+        <span>أنظمة أخرى</span>
+      </a>
+
+      <a href="burn.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="disc" class="w-5 h-5"></i>
+        <span>حرق ISO</span>
+      </a>
+
+      <a href="drivers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="hard-drive" class="w-5 h-5"></i>
+        <span>التعريفات</span>
+      </a>
+
+      <a href="essential.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="package" class="w-5 h-5"></i>
+        <span>برامج أساسية</span>
+      </a>
+
+      <a href="browsers.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="globe" class="w-5 h-5"></i>
+        <span>متصفحات</span>
+      </a>
+
+      <a href="tools.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white transition">
+        <i data-lucide="wrench" class="w-5 h-5"></i>
+        <span>أدوات صيانة</span>
+      </a>
+
+    </nav>
+  </div>
+</div>
+  
+<script>
+function toggleSidebar() {
+  const sidebar = document.getElementById('mobileSidebar');
+  const content = document.getElementById('sidebarContent');
+  
+  if (sidebar.classList.contains('hidden')) {
+    sidebar.classList.remove('hidden');
+    setTimeout(() => {
+      content.classList.remove('translate-x-full');
+    }, 10);
+  } else {
+    content.classList.add('translate-x-full');
+    setTimeout(() => {
+      sidebar.classList.add('hidden');
+    }, 300);
+  }
+}
+
+document.querySelectorAll('#mobileSidebar nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    setTimeout(() => toggleSidebar(), 100);
+  });
+});
+
+document.getElementById('mobileSidebar').addEventListener('click', function(e) {
+  if (e.target === this) {
+    toggleSidebar();
+  }
+});
+
+lucide.createIcons();
+</script>
+    
+</body>
+</html>
+        
